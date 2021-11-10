@@ -5,7 +5,12 @@ steps:
   - run:
       name: install kustomize
       working_directory: /bin
-      command: curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash
+      command: |
+        if [ -f "kustomize" ]; then
+          echo "kustomize already installed"
+        else
+          curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash
+        fi
   - run:
       name: confirm
       command: kustomize version
