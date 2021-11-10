@@ -1,17 +1,18 @@
 description: >
+  Easily execute "kustomize edit set image" command.
 # What will this command do?
 # Descriptions should be short, simple, and clear.
 parameters:
   path:
     type: string
     default: "."
-    description: ""
+    description: "The path to the kustomization.yml file."
   from:
     type: string
-    description: ""
+    description: "Image name before editing."
   to:
     type: string
-    description: ""
+    description: "Image name after editing."
 steps:
   - install-kustomize
   - run:

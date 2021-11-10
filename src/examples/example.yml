@@ -1,13 +1,25 @@
 description: >
-  Sample example description.
 # Provide a use-case based example for using this orb.
 # Everything in the `usage` section will be displayed in the orb registry.
 # Comments are not retained.
 usage:
   version: 2.1
+
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    k8s-tools: rhems-japan/k8s-tools@x.y.z
+
+  jobs:
+    your-job:
+      machine: true
+      steps:
+        - k8s-tools/install-kustomize
+        - k8s-tools/install-skaffold
+        - k8s-tools/kustomize-edit-image:
+            path: ".circleci/k8s"
+            from: "__TEST__"
+            to: "nginx:latest"
+
   workflows:
-    use-my-orb:
+    your-workflow:
       jobs:
-        - <orb-name>/<job-name>
+        - your-job
