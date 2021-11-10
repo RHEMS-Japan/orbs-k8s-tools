@@ -7,7 +7,7 @@ usage:
 
   orbs:
     k8s-tools: rhems-japan/k8s-tools@x.y.z
-  
+
   jobs:
     your-job:
       machine: true
