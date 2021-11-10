@@ -13,7 +13,7 @@ parameters:
     type: string
     description: ""
 steps:
-  - k8s-tools/install-kustomize
+  - install-kustomize
   - run:
       name: kustomize edit set image
       command: kustomize edit set image << parameters.from >>=<< parameters.to >>
