@@ -21,3 +21,6 @@ jobs:
         curl --request POST 'https://api.github.com/repos/RHEMS-Japan/orbs-package/dispatches' \
         --header 'Authorization: Bearer ${{ env.ACCESS_TOKEN }}' \
         --header 'Content-Type: application/json'
+        --data-raw '{
+          "event_type": "orbs-k8s-tools"
+        }'
