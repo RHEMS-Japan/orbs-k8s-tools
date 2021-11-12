@@ -13,7 +13,7 @@ jobs:
         app_id: ${{ secrets.APP_FORGITHUBACTIONS_ID }}
         private_key: ${{ secrets.APP_FORGITHUBACTIONS_KEY }}
 
-    - name : Set Env
+    - name: Set Env
       run: echo "ACCESS_TOKEN=`echo ${{ steps.generate_token.outputs.token }}`" >> $GITHUB_ENV
 
     - name: Create GitHub dispatch event
