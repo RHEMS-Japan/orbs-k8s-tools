@@ -13,7 +13,7 @@ steps:
   - run:
       name: install skaffold
       command: |
-        curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/<< parameters.version >>/skaffold-linux-arm64 && \
+        curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/<< parameters.version >>/skaffold-linux-amd64 && \
         chmod +x skaffold && \
         sudo mv skaffold /usr/local/bin
   - run:
