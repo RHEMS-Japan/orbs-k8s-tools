@@ -30,7 +30,8 @@ jobs:
     steps:
       - checkout
       - k8s-tools/install-kustomize
-      - k8s-tools/install-skaffold
+      - k8s-tools/install-skaffold:
+          version: v1.35.1
       - k8s-tools/kustomize-edit-image:
           path: ".circleci/k8s"
           from: "__TEST__"
