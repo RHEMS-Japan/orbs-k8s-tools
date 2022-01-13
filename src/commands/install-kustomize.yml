@@ -20,7 +20,7 @@ steps:
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash
         else
           _version=$(echo << parameters.version >> | sed -e "s/v//g")
-          curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash -s << parameters.version >>
+          curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash -s ${_version}
         fi
   - run:
       name: confirm
