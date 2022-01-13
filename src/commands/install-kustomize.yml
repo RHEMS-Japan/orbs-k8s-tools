@@ -16,7 +16,7 @@ steps:
       command: |
         if [ -f "kustomize" ]; then
           echo "kustomize already installed"
-        elif [ << parameters.version >> = "latest" ]
+        elif [ << parameters.version >> = "latest" ]; then
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash
         else
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash -s << parameters.version >>
