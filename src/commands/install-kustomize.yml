@@ -19,8 +19,9 @@ steps:
         elif [ << parameters.version >> = "latest" ]; then
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash
         else
+          _version=$(echo << parameters.version >> | sed -e "s/v//g")
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash -s << parameters.version >>
         fi
-  - run:
+  - run:  
       name: confirm
       command: kustomize version
