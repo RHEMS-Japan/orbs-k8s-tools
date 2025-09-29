@@ -37,7 +37,7 @@ jobs:
           path: ".circleci/k8s"
           from: "__TEST__"
           to: "nginx:latest"
-          kustomize-version: v5.7.0
+          # kustomize-version: v5.7.0
       # - k8s-tools/skaffold-run:
       #     path: ".circleci/k8s"
       #     profile: "test"
