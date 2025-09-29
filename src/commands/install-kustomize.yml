@@ -10,9 +10,9 @@ parameters:
 steps:
   - run:
       name: install kustomize
-      working_directory: /bin
+
       command: |
-        if [ -f "kustomize" ]; then
+        if [ -f "/usr/local/bin/kustomize" ]; then
           echo "kustomize already installed"
         elif [ << parameters.version >> = "latest" ]; then
           VERSION=$(curl -sI https://github.com/kubernetes-sigs/kustomize/releases/latest \
@@ -25,5 +25,5 @@ steps:
 
         curl -L -o kustomize.tar.gz https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/${VERSION}/kustomize_${VERSION}_linux_amd64.tar.gz
         tar -zxvf kustomize.tar.gz
-
+        sudo mv kustomize /usr/local/bin/
         kustomize version
