@@ -10,7 +10,6 @@ parameters:
 steps:
   - run:
       name: install kustomize
-
       command: |
         if [ -f "/usr/local/bin/kustomize" ]; then
           echo "kustomize already installed"
